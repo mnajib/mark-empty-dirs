@@ -1,0 +1,6 @@
+
+# .gitignore
+
+.envrc
+result
+.direnv/
