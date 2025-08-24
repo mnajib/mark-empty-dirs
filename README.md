@@ -20,13 +20,16 @@ A declarative CLI tool to mark empty directories with `.keep` files.
 
 ```
 .
-├── main.sh              # Entry point
-├── lib/                 # Modular helpers
-│   ├── io.sh            # Impure IO functions
-│   └── maybe.sh         # Pure logic functions
-├── tests/               # bats test suite
-├── flake.nix            # Nix flake definition
-└── README.md
+├── flake.lock           # Nix flake lock file (pinned dependencies)
+├── flake.nix            # Flake definition with build/devShell/apps/checks
+├── lib/                 # Modular Bash helpers
+│   ├── args.sh          # Argument parsing (impure, CLI-facing)
+│   ├── io.sh            # Logging and help text (impure)
+│   └── logic.sh         # Pure maybe_ functions for directory analysis
+├── LICENSE              # Project license
+├── main.sh              # CLI entry point (orchestrates logic and IO)
+└── README.md            # Documentation and usage guide
+
 ```
 
 ---
