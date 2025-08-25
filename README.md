@@ -1,4 +1,4 @@
-# keep-empty
+# mark-empty-dirs
 
 Marks empty directories with `.keep` files to preserve them in version control.
 A declarative CLI tool to mark empty directories with `.keep` files.
@@ -45,7 +45,7 @@ nix run https://github.com/mnajib/mark-empty-dirs.git
 ```bash
 nix build
 ```
-Result will be in ./result/bin/keep-empty
+Result will be in ./result/bin/mark-empty-dirs
 
 ## To Tests
 ```bash
@@ -58,7 +58,7 @@ Includes shellcheck linting and bats tests
 ```nix
 {
   home.packages = [
-    inputs.keep-empty.packages.${system}.default
+    inputs.mark-empty-dirs.packages.${system}.default
   ];
 }
 ```
@@ -66,7 +66,7 @@ Includes shellcheck linting and bats tests
 ## To Use
 
 ```bash
-keep-empty /path/to/dir --help
-keep-empty /path/to/dir --dry-run
-keep-empty /path/to/dir
+mark-empty-dirs /path/to/dir --help
+mark-empty-dirs /path/to/dir --dry-run
+mark-empty-dirs /path/to/dir
 ```

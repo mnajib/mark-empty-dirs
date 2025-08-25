@@ -24,7 +24,7 @@
       perSystem = { pkgs, config, system, ... }: {
 
         packages.default = pkgs.stdenv.mkDerivation {
-          name = "keep-empty";
+          name = "mark-empty-dirs";
           src = ./.;
 
           buildInputs = [ pkgs.findutils pkgs.coreutils ];
@@ -35,12 +35,12 @@
 
             #cp -r ${./lib}/* $out/lib
             cp lib/*.sh $out/lib/
-            cp main.sh $out/bin/keep-empty
+            cp main.sh $out/bin/mark-empty-dirs
 
-            substituteInPlace $out/bin/keep-empty \
+            substituteInPlace $out/bin/mark-empty-dirs \
               --replace '$(dirname "$0")/lib' "$out/lib"
 
-            chmod +x $out/bin/keep-empty
+            chmod +x $out/bin/mark-empty-dirs
           '';
         }; # End of 'packages.default = pkgs.writeShellApplication { ... };'
 
@@ -54,7 +54,7 @@
             pkgs.tree
           ];
           shellHook = ''
-            echo "🔧 keep-empty dev shell activated"
+            echo "🔧 mark-empty-dirs dev shell activated"
             echo "Run ./main.sh or use nix run"
           '';
         };
@@ -63,7 +63,7 @@
 
         apps.default = {
           type = "app";
-          program = "${config.packages.default}/bin/keep-empty";
+          program = "${config.packages.default}/bin/mark-empty-dirs";
         };
 
         checks.shellcheck = pkgs.runCommand "shellcheck" { } ''

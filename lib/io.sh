@@ -9,7 +9,7 @@ log_error_io() { echo "[ERROR] $*" >&2; }
 
 show_help_io() {
   cat <<EOF
-Usage: keep-empty <root> [--dry-run]
+Usage: mark-empty-dirs <root> [--dry-run]
 
 Marks empty directories with .keep files.
 
