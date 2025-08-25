@@ -37,7 +37,7 @@ A declarative CLI tool to mark empty directories with `.keep` files.
 ## To Quick Start
 
 ```bash
-nix run https://github.com/mnajib/mark-empty-dirs.git
+nix run https://github.com/nyumtide/mark-empty-dirs.git
 ```
 
 ## To Build Locally
